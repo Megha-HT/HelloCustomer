@@ -1,0 +1,265 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #286CF3;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-title{
+    background: #f2f2f2;
+    opacity:1;
+    padding: 20px;
+    margin-bottom: 23px;
+    .title{
+    color: #003161;
+    font-size:24px;
+    font-family: Arial;
+    }
+
+
+.buttons-right{ 
+    float: right;
+    .save{
+        background: #26CC5B 0% 0% no-repeat padding-box;
+        border-radius: 100px;
+        opacity: 1; 
+        border: none;
+        padding: 10px;
+        color: white;
+        font: normal normal bold 12px/14px Arial;
+        letter-spacing: 0.6px;
+        color: #FFFFFF;
+    }
+
+    .cancel{
+        font: normal normal bold 12px/14px Arial;
+        letter-spacing: 0.6px;
+        color: #006CFF;
+        opacity: 1;
+        border: none;
+        }
+    }  
+  }
+
+  .container-fluid-width{
+      width: 1000px;
+      margin-left: 10%;
+  .pi{
+    margin: 10px 0px;
+    // padding: 12px;
+    color: #003161;
+    font: normal normal bold 14px/18px Arial;
+}
+  .personal-info{
+    
+
+    .mat-form-field{
+        width:100%;
+    }
+
+    
+
+  }
+
+  .role{
+
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    .mat-card{
+        height: 130px;
+        cursor: pointer;
+    }
+
+    #triangle-topright {
+        width: 0;
+        height: 0;
+        border-top: 25px solid #006BFF;
+        border-left: 25px solid transparent;
+        position: absolute;
+        top: 0px;
+        left: 285px;
+      }
+
+      .border-blue{
+          border: 2px solid #006BFF;
+      }
+
+      .glyphicon{
+        top: -19px;
+        left: 281px;
+        color: white;
+      	font-size: 10px;
+      }
+  }
+
+  .permission{
+    margin-bottom: 50px;
+    color: #003161 !important;
+
+    .checkbox-img{
+      padding-bottom: 5px;
+        margin: 0px 6px;
+    }
+
+    .checkbox-img2{
+      height: 18px;
+      padding-bottom: 5px;
+        margin: 0px 6px;
+    }
+    
+    .w-22{
+      width: 22px;
+    }
+
+    .team-img{
+      height: 15px;
+      width: 15px;
+      padding-top: 0px;
+      margin-right: 4px;
+      margin-top: 3px;
+    }
+
+    .folder-img{
+      height: 13px;
+      width: 13px;
+      padding-top: 0px;
+      margin-left: 4px;
+      margin-right: 2px;
+      margin-top: 3px;
+    }
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .panel-heading[data-toggle="collapse"]:after {
+    content : "hide";
+  }
+
+  .align-right{
+    float:right;
+  }
+
+  ::ngdeep .mat-accordion{
+    color: #003161;
+  }
+
+  mat-accordion{
+    font-family: Arial;
+    color: #003161;
+    mat-expansion-indicator{
+      visibility: hidden;
+    }
+    .mat-expansion-panel{
+      mat-panel-description{
+        color: #006CFF;
+    font-size: 12px;
+    margin-left: 500px;
+    padding-top: 8px;
+      }
+    }
+
+    .mat-expansion-panel-header{
+     background: #EFEFEF;
+    }
+
+    
+  }
+}
+.touchpoint {
+  width: 50%;
+  float:left;
+  display: inline;
+}
+
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: blue;
+}
+
+.alert{
+  color: red;
+}
+
+::ng-deep .mat-radio-button .mat-radio-container {
+  width: 0;
+}
+::ng-deep .mat-radio-container .mat-radio-outer-circle,
+::ng-deep .mat-radio-container .mat-radio-inner-circle {
+  border: none;
+  width: 0;
+}
+
+div.mat-ripple-element {
+  background-color: none;
+}
+
+
+:host ::ng-deep .mat-radio-container{
+  height: 10px;
+  width: 10px;
+}
+:host ::ng-deep .mat-radio-outer-circle{
+  height: 10px;
+  width: 10px;
+}
+input[type=radio]{
+  visibility: hidden;
+}
+
+}

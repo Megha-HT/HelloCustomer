@@ -1,0 +1,193 @@
+<div class="toolbar" role="banner">
+</div>
+
+<form [formGroup]="PersonalInformationForm" (ngSubmit)="onSubmit()">
+  <div class="form-title">
+    <label class="title">Add a new user</label>
+    <div class="buttons-right">
+      <button class="cancel" (click)="reset()">CANCEL</button>
+      <button class="save" [disabled]="!PersonalInformationForm.valid">SAVE USER</button>
+    </div>
+  </div>
+
+  <div class="container-fluid-width">
+    <div class="personal-info">
+      <label class='pi'>PERSONAL INFORMATION</label>
+
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>First Name (optional)</mat-label>
+            <input matInput formControlName="firstName">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Email address</mat-label>
+            <input matInput formControlName="email">
+          </mat-form-field>
+          <div
+            *ngIf="PersonalInformationForm.controls['email'].invalid && (PersonalInformationForm.controls['email'].dirty || PersonalInformationForm.controls['email'].touched)">
+            <div *ngIf="PersonalInformationForm.controls['email'].errors.pattern" class="alert">
+              Please enter valid email id
+            </div>
+            <div *ngIf="PersonalInformationForm.controls['email'].errors.required" class="alert">
+              *Please enter email
+            </div>
+          </div>
+
+
+          <mat-form-field>
+            <mat-label>Language</mat-label>
+            <mat-select formControlName="languagea">
+              <mat-option *ngFor="let language of languages" [value]="language.value">
+                {{language.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div
+            *ngIf="PersonalInformationForm.controls['languagea'].invalid && (PersonalInformationForm.controls['languagea'].dirty || PersonalInformationForm.controls['languagea'].touched)"
+            class="alert">
+            <div *ngIf="PersonalInformationForm.controls['languagea'].errors.required" class="alert">
+              *Please enter language
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Last Name (optional)</mat-label>
+            <input matInput formControlName="lastName">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Confirm email address</mat-label>
+            <input matInput formControlName="confirmEmail">
+          </mat-form-field>
+          <div
+            *ngIf="PersonalInformationForm.controls['confirmEmail'].invalid && (PersonalInformationForm.controls['confirmEmail'].dirty || PersonalInformationForm.controls['confirmEmail'].touched)">
+            <div *ngIf="PersonalInformationForm.controls['confirmEmail'].errors.pattern" class="alert">
+              Please enter valid email id
+            </div>
+            <div *ngIf="PersonalInformationForm.controls['confirmEmail'].errors.required" class="alert">
+              *Please enter email
+            </div>
+          </div>
+
+
+
+        </div>
+        <!-- <div class="col-md-3"></div> -->
+        <!-- </form> -->
+      </div>
+    </div>
+
+    <div class="role">
+      <label class='pi'>ASSIGN A ROLE</label>
+      <div class="row">
+
+        <div class="col-md-4" *ngFor="let role of roles; let i =index">
+          <input type="radio" formControlName="role" id="radio{{i}}" [value]=role.roleName checked="true">
+          <label for="radio{{i}}">
+
+            <mat-card [ngClass]="{'border-blue': selectedRole == role.roleName }" (click)="selectRole(role.roleName)">
+              <div id="triangle-topright" *ngIf="selectedRole == role.roleName">
+              </div>
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+
+              <mat-card-title>{{ role.roleName }}</mat-card-title>
+              <mat-card-content>{{ role.desc }}</mat-card-content>
+            </mat-card>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="permission">
+      <label class='pi'>CUSTOM ACCESS PERMISSION</label>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <img src="../assets/images/team.png" class="team-img">
+              Ontwikkel / <img src="../assets/images/folder.png" class="folder-img">Team A
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <h4>DASHBOARD ACCESS</h4>
+          <div class="touchpoint">
+            <h6>TOUCHPOINT</h6>
+            <h4>
+              <img src="../assets/images/email-touchpoint.png" class="w-22">Touchpoint email 1
+            </h4>
+          </div>
+          <div class="dashboard">
+            <h6>DASHBOARD</h6>
+            <input type="checkbox" id="checkbox-1" value="Default" formControlName="access" />
+            <label for="checkbox-1">
+              <img src="../assets/images/dashboard.png" class="checkbox-img">Default</label>
+            <br />
+            <input type="checkbox" id="checkbox-2" value="Custom" formControlName="access" />
+            <label for="checkbox-2">
+              <img src="../assets/images/dashboard.png" class="checkbox-img">Custom NPS Dashboard</label>
+          </div>
+          <div class="">
+            <div class="touchpoint">
+              <h4>
+                <img src="../assets/images/email-touchpoint.png" class="w-22">Touchpoint email 2
+              </h4>
+            </div>
+            <div class="dashboard">
+              <h6>DASHBOARD</h6>
+              <input type="checkbox" id="checkbox-3" value=Default formControlName="access" />
+              <label for="checkbox-3">
+                <img src="../assets/images/dashboard.png" class="checkbox-img">Default</label>
+            </div>
+          </div>
+          <div class="">
+            <h4>REPORTS</h4>
+            <div class="touchpoint">
+              <h6>TOUCHPOINT</h6>
+              <h4>
+                <img src="../assets/images/email-touchpoint.png" class="w-22">Touchpoint email 1
+              </h4>
+            </div>
+            <div class="dashboard">
+              <h6>DASHBOARD</h6>
+              <input type="checkbox" id="checkbox-4" value="Default" formControlName="access" />
+              <label for="checkbox-4">
+                <img src="../assets/images/report.png" class="checkbox-img2">Default</label>
+            </div>
+          </div>
+          <br />
+          <div>
+            <div class="touchpoint">
+              <h4>
+                <img src="../assets/images/email-touchpoint.png" class="w-22">Touchpoint email 2
+              </h4>
+            </div>
+            <div class="dashboard">
+              <input type="checkbox" id="checkbox-5" value="Default" formControlName="access" />
+              <label for="checkbox-5">
+                <img src="../assets/images/report.png" class="checkbox-img2"> Default</label>
+            </div>
+          </div>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <img src="../assets/images/team.png" class="team-img">Client Team / <img src="../assets/images/folder.png"
+                class="folder-img"> Team Brussel
+            </mat-panel-title>
+            <mat-panel-description>
+              {{panelOpenState ? 'Hide' : 'Show'}} Permissions & Access
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>No Content</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</form>
+<router-outlet></router-outlet>
